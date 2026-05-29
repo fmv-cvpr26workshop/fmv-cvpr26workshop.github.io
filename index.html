@@ -29,6 +29,80 @@
         a {
             color: #524000;
         }
+
+        /* Schedule table */
+        #schedule .table-container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        #schedule .schedule-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        #schedule .schedule-table thead th {
+            background: #ffc800;
+            color: #3d2f00;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.9rem 1.5rem;
+            text-align: left;
+        }
+
+        #schedule .schedule-table thead th.time-col {
+            width: 9rem;
+            white-space: nowrap;
+        }
+
+        #schedule .schedule-table tbody td {
+            padding: 0.9rem 1.5rem;
+            vertical-align: middle;
+            border-top: 1px solid #f0ead6;
+            text-align: left;
+        }
+
+        #schedule .schedule-table tbody tr:hover td {
+            background: #fff9e6;
+        }
+
+        #schedule .schedule-table .time {
+            white-space: nowrap;
+            font-weight: 600;
+            color: #8a6d00;
+            font-variant-numeric: tabular-nums;
+        }
+
+        #schedule .schedule-table .speaker-name {
+            font-weight: 700;
+            color: #212529;
+        }
+
+        #schedule .schedule-table .talk-title {
+            color: #6c757d;
+            font-size: 0.92rem;
+        }
+
+        #schedule .schedule-table .session-row td,
+        #schedule .schedule-table .break-row td {
+            background: #faf6e9;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        #schedule .schedule-table .break-row td:not(.time) {
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            font-style: normal;
+        }
     </style>
 
 </head>
@@ -128,67 +202,116 @@
     </section>
 
     <!-- Schedule -->
-    <!-- <section class="page-section bg" id="schedule">
+    <section class="page-section bg" id="schedule">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Schedule (Room 212)</h2>
-                <h3 class="section-subheading text-muted">June 11 Central Time</h3>
+                <h2 class="section-heading text-uppercase">Schedule (Room 607)</h2>
+                <h3 class="section-subheading text-muted">June 3 Central Time</h3>
                 <div class="table-container">
-                    <h4>
-                        TBD
-                    </h4>
-                    <table class="table table-responsive table-bordered table-hover table-sm">
-                        <thead class="table-primary">
+                    <table class="schedule-table">
+                        <thead>
                             <tr>
-                                <th style="white-space: nowrap;">Time</th>
-                                <th style="word-wrap: break-word; white-space: normal;">Speaker</th>
+                                <th class="time-col">Time</th>
+                                <th>Speaker</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td style="white-space: nowrap;">8:25 - 8:30</td>
-                                <td style="word-wrap: break-word; white-space: normal;">Welcome and Opening Remarks</td>
-                            </tr>    
-                            <tr  class="table-primary">
-                                <td style="white-space: nowrap;">8:30 - 9:00</td>
-                                <td style="word-wrap: break-word; white-space: normal;">Jakob Nikolas Kather<br>
-                                    <a href="https://youtu.be/vI4vY_jIy18" target="_blank">AI Agents in Oncology and Cancer Research</a></td>
+                            <tr class="session-row">
+                                <td class="time">8:30 - 9:00</td>
+                                <td>Welcome and Opening Remarks</td>
                             </tr>
                             <tr>
-                                <td style="white-space: nowrap;">9:00 - 09:30</td>
-                                <td style="word-wrap: break-word; white-space: normal;">Faisal Mahmood<br>
-                                    <a href="https://youtu.be/nwB8WAHdTKM" target="_blank">Multimodal and Generative AI for Pathology</a></td>
-                            </tr> 
-                            <tr class="table-primary">
-                                <td style="white-space: nowrap;">09:30 - 10:00</td>
-                                <td style="word-wrap: break-word; white-space: normal;">Hoifung Poon<br>
-                                    <a href="https://youtu.be/1kXAeX2B2fo" target="_blank">Learning the Language of Patients: Multimodal GenAI for Precision Health</a></td>
+                                <td class="time">9:00 - 9:30</td>
+                                <td><span class="speaker-name">Jakob Nikolas Kather</span><br>
+                                    <span class="talk-title">AI applications in oncology and cancer research</span></td>
                             </tr>
                             <tr>
-                                <td style="white-space: nowrap;">10:00 - 11:00</td>
-                                <td style="word-wrap: break-word; white-space: normal;">Coffee Break</td>
+                                <td class="time">9:30 - 10:00</td>
+                                <td><span class="speaker-name">Faisal Mahmood</span><br>
+                                    <span class="talk-title">Multimodal and Generative AI for Pathology</span></td>
                             </tr>
-                            <tr class="table-primary">
-                                <td style="white-space: nowrap;">11:00 - 11:30</td>
-                                <td style="word-wrap: break-word; white-space: normal;">Pranav Rajpurkar<br>
-                                    <a href="https://youtu.be/a-wzH_DwoyI" target="_blank">Breaking Boundaries: Multimodal Foundation Models for Next-Generation Radiology</a></td>
+                            <tr class="break-row">
+                                <td class="time">10:00 - 11:00</td>
+                                <td>Coffee Break</td>
                             </tr>
                             <tr>
-                                <td style="white-space: nowrap;">11:30 - 12:00</td>
-                                <td style="word-wrap: break-word; white-space: normal;">Daniel Rueckert<br>
-                                    <a href="https://youtu.be/1T08kpwIvw0" target="_blank">Foundation Models for Radiology</a></td>
+                                <td class="time">11:00 - 11:30</td>
+                                <td><span class="speaker-name">Hoifung Poon</span><br>
+                                    <span class="talk-title">Toward Virtual Patient: AI for Accelerating Medical Discovery</span></td>
                             </tr>
-                            <tr class="table-primary">
-                                <td style="white-space: nowrap;">12:00 - 12:30</td>
-                                <td style="word-wrap: break-word; white-space: normal;">Segmentation Foundation Model Competition<br>
-                                    Winner Highlights</a></td>
-                            </tr>                            
+                            <tr>
+                                <td class="time">11:30 - 12:00</td>
+                                <td><span class="speaker-name">Pranav Rajpurkar</span><br>
+                                    <span class="talk-title">Routing to Autonomous AI for Medicine</span></td>
+                            </tr>
+                            <tr class="session-row">
+                                <td class="time">12:00 - 12:30</td>
+                                <td>CT Foundation Model Competition: Winner highlights</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+
+            <!-- Presentations / Abstracts -->
+            <div class="text-center mt-5">
+                <h2 class="section-heading text-uppercase">Presentations</h2>
+            </div>
+            <div class="row text-left">
+                <div class="mb-4">
+                    <h4>Jakob Nikolas Kather</h4>
+                    <h5><em>AI applications in oncology and cancer research</em></h5>
+                    <p>
+                        Artificial intelligence (AI) is rapidly transforming cancer research and oncology.
+                        This talk will highlight two key areas where AI is making a major impact.
+                        First, it will discuss how AI can extract meaningful, quantitative insights from medical data,
+                        including, but not limited to, histopathology images. AI tools can help predict cancer outcomes,
+                        treatment responses, genetic alterations, and gene expression, using data that is already routinely
+                        collected. These approaches have the potential to reduce the workload for clinicians, improve
+                        consistency in reporting, and reveal patterns that were previously hidden.
+                        Second, it will explore the emerging role of large language models (LLMs) and AI agents.
+                        LLMs can now reason, plan, and act&mdash;allowing them to perform complex, multi-step tasks with
+                        minimal human input. When used as agents, they can interact with external software or databases,
+                        and even help design drugs or recommend treatment strategies. These capabilities go beyond
+                        traditional AI systems and are opening up new possibilities in both research and clinical care.
+                    </p>
+                </div>
+                <div class="mb-4">
+                    <h4>Hoifung Poon</h4>
+                    <h5><em>Toward Virtual Patient: AI for Accelerating Medical Discovery</em></h5>
+                    <p>
+                        Today, medical discovery advances one clinical trial at a time, each taking years to execute and
+                        often costing $100 million or more. As we enter the era of precision health in which we recognize
+                        that &ldquo;one size doesn't fit all&rdquo; and thus try to tailor treatments for each individual,
+                        continuing on today's discovery processes is clearly not sustainable. The confluence of
+                        technological advances and social policies has led to rapid digitization of multimodal,
+                        longitudinal patient journeys, such as electronic health records (EHRs), imaging, and multiomics.
+                        Our overarching research agenda lies in advancing multimodal generative AI to learn the language
+                        of patients and create a virtual patient world model as digital twin for forecasting disease
+                        progression and treatment response. This enables us to synthesize population-scale real-world
+                        evidence from hundreds of millions of patients and accelerate medical discovery through AI-powered
+                        virtual clinical trials, in deep partnerships with real-world stakeholders such as large health
+                        systems and life sciences companies.
+                    </p>
+                </div>
+                <div class="mb-4">
+                    <h4>Pranav Rajpurkar</h4>
+                    <h5><em>Routing to Autonomous AI for Medicine</em></h5>
+                    <p>
+                        Recent evidence challenges a fundamental assumption in medical AI: that combining AI with physician
+                        expertise naturally leads to better outcomes. Studies show that AI assistance often fails to improve
+                        diagnostic accuracy and can even slow down clinical workflows. This talk presents an alternative
+                        vision: instead of forcing integration, we should embrace clear role separation between AI systems
+                        and physicians. Drawing from recent large-scale studies and advances in generalist medical AI
+                        systems, I will examine promising models where AI and doctors work separately but complementarily,
+                        each leveraging their unique strengths. Through practical examples and emerging evidence, I will
+                        demonstrate how this approach could transform clinical practice while maintaining the essential
+                        role of human medical expertise.
+                    </p>
+                </div>
+            </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Speakers -->
     <section class="page-section bg-light" id="speakers">
