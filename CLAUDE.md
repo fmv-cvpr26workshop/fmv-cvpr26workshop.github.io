@@ -9,7 +9,7 @@ A static website for the CVPR 2026 Workshop on Foundation Models for Medical Vis
 ## Developing & previewing
 
 - Open `index.html` directly in a browser, or use the VS Code launch config `.vscode/launch.json` ("Open index.html", Chrome). A simple static server (e.g. `python3 -m http.server`) also works.
-- Asset/CSS/JS links use **root-absolute paths** (`/css/styles.css`, `/assets/...`, `/js/scripts.js`). These resolve correctly on GitHub Pages and when served from the repo root, but break when opening files via `file://` from a subdirectory. Pages under `previous/` use **relative paths** (`../css/styles.css`) instead.
+- Asset/CSS/JS links use **relative paths** (`css/styles.css`, `assets/...`, `js/scripts.js`). These resolve correctly on GitHub Pages, when served from the repo root, and when opening `index.html` directly via `file://`. Pages under `previous/` use `../`-prefixed relative paths (`../css/styles.css`). The only intentionally absolute URLs are the Open Graph / Twitter `<meta>` image and URL tags in `<head>`, which require a full `https://fmv-cvpr26workshop.github.io/...` URL.
 
 ## Architecture & structure
 
@@ -31,4 +31,4 @@ A static website for the CVPR 2026 Workshop on Foundation Models for Medical Vis
 ## Conventions
 
 - The navbar "Competition" and "Previous" dropdowns use Bootstrap dropdown markup and link out to external URLs (Codabench competitions, prior workshop sites). Keep these in sync when editions/competitions change.
-- Mixed path separators appear in some `<img src>` attributes (backslashes, e.g. `assets\img\...`); these happen to work but prefer forward slashes for new entries.
+- Always use forward slashes in `<img src>` and other paths (`assets/img/...`). Older archived pieces occasionally used Windows backslashes (`assets\img\...`); these happen to work but should be normalized to forward slashes when touched.
