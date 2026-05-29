@@ -1,455 +1,662 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="CVPR 2026 Workshop on Foundation Models for Medical Vision — expert talks, discussions, and international competitions on foundation models for medical imaging (pathology, radiology, echocardiography, and more)." />
-    <meta name="author" content="CVPR 2026 Workshop on Foundation Models for Medical Vision" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="CVPR 2026 Workshop on Foundation Models for Medical Vision — expert talks, discussions, and international competitions on foundation models for medical imaging (pathology, radiology, echocardiography, and more)."
+    />
+    <meta
+      name="author"
+      content="CVPR 2026 Workshop on Foundation Models for Medical Vision"
+    />
     <title>CVPR 2026 Workshop on Foundation Models for Medical Vision</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
     <!-- Open Graph / social sharing -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="CVPR 2026 Workshop on Foundation Models for Medical Vision" />
-    <meta property="og:description" content="Expert talks, discussions, and international competitions on foundation models for medical imaging at CVPR 2026." />
+    <meta
+      property="og:title"
+      content="CVPR 2026 Workshop on Foundation Models for Medical Vision"
+    />
+    <meta
+      property="og:description"
+      content="Expert talks, discussions, and international competitions on foundation models for medical imaging at CVPR 2026."
+    />
     <meta property="og:url" content="https://fmv-cvpr26workshop.github.io/" />
-    <meta property="og:image" content="https://fmv-cvpr26workshop.github.io/assets/img/header-bg.jpg" />
+    <meta
+      property="og:image"
+      content="https://fmv-cvpr26workshop.github.io/assets/img/header-bg.jpg"
+    />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="CVPR 2026 Workshop on Foundation Models for Medical Vision" />
-    <meta name="twitter:description" content="Expert talks, discussions, and international competitions on foundation models for medical imaging at CVPR 2026." />
-    <meta name="twitter:image" content="https://fmv-cvpr26workshop.github.io/assets/img/header-bg.jpg" />
+    <meta
+      name="twitter:title"
+      content="CVPR 2026 Workshop on Foundation Models for Medical Vision"
+    />
+    <meta
+      name="twitter:description"
+      content="Expert talks, discussions, and international competitions on foundation models for medical imaging at CVPR 2026."
+    />
+    <meta
+      name="twitter:image"
+      content="https://fmv-cvpr26workshop.github.io/assets/img/header-bg.jpg"
+    />
 
     <!-- icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.1.0/css/all.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
 
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&display=swap" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 
     <style>
-        a {
-            color: #524000;
-        }
+      a {
+        color: #524000;
+      }
 
-        /* Schedule table */
-        #schedule .table-container {
-            max-width: 820px;
-            margin: 0 auto;
-        }
+      /* Schedule table */
+      #schedule .table-container {
+        max-width: 820px;
+        margin: 0 auto;
+      }
 
-        #schedule .schedule-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-        }
+      #schedule .schedule-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      }
 
-        #schedule .schedule-table thead th {
-            background: #ffc800;
-            color: #3d2f00;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 700;
-            font-size: 0.85rem;
-            padding: 0.9rem 1.5rem;
-            text-align: left;
-        }
+      #schedule .schedule-table thead th {
+        background: #ffc800;
+        color: #3d2f00;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+        font-size: 0.85rem;
+        padding: 0.9rem 1.5rem;
+        text-align: left;
+      }
 
-        #schedule .schedule-table thead th.time-col {
-            width: 9rem;
-            white-space: nowrap;
-        }
+      #schedule .schedule-table thead th.time-col {
+        width: 9rem;
+        white-space: nowrap;
+      }
 
-        #schedule .schedule-table tbody td {
-            padding: 0.9rem 1.5rem;
-            vertical-align: middle;
-            border-top: 1px solid #f0ead6;
-            text-align: left;
-        }
+      #schedule .schedule-table tbody td {
+        padding: 0.9rem 1.5rem;
+        vertical-align: middle;
+        border-top: 1px solid #f0ead6;
+        text-align: left;
+      }
 
-        #schedule .schedule-table tbody tr:hover td {
-            background: #fff9e6;
-        }
+      #schedule .schedule-table tbody tr:hover td {
+        background: #fff9e6;
+      }
 
-        #schedule .schedule-table .time {
-            white-space: nowrap;
-            font-weight: 600;
-            color: #8a6d00;
-            font-variant-numeric: tabular-nums;
-        }
+      #schedule .schedule-table .time {
+        white-space: nowrap;
+        font-weight: 600;
+        color: #8a6d00;
+        font-variant-numeric: tabular-nums;
+      }
 
-        #schedule .schedule-table .speaker-name {
-            font-weight: 700;
-            color: #212529;
-        }
+      #schedule .schedule-table .speaker-name {
+        font-weight: 700;
+        color: #212529;
+      }
 
-        #schedule .schedule-table .talk-title {
-            color: #6c757d;
-            font-size: 0.92rem;
-        }
+      #schedule .schedule-table .talk-title {
+        color: #6c757d;
+        font-size: 0.92rem;
+      }
 
-        #schedule .schedule-table .session-row td,
-        #schedule .schedule-table .break-row td {
-            background: #faf6e9;
-            color: #6c757d;
-            font-style: italic;
-        }
+      #schedule .schedule-table .session-row td,
+      #schedule .schedule-table .break-row td {
+        background: #faf6e9;
+        color: #6c757d;
+      }
 
-        #schedule .schedule-table .break-row td:not(.time) {
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.85rem;
-            font-style: normal;
-        }
+      #schedule .schedule-table .break-row td:not(.time) {
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.85rem;
+        font-style: normal;
+      }
     </style>
+  </head>
 
-</head>
-
-<body id="page-top">
-
+  <body id="page-top">
     <div id="navbar">
-
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-
-                <!-- NAVBAR LINK AND LOGO -->
-                <a class="navbar-brand" href="#"><img src="assets/img/logos/cvpr-logo.jpg" alt="CVPR logo" style="background-color: white;" /></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#organizers">Organizers</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Competition
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="competitionDropdown">
-                              <li>
-                                <a class="dropdown-item" href="https://www.codabench.org/competitions/12650/" target="_blank">Foundation Models for 3D CT</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="https://www.codabench.org/competitions/7149/" target="_blank">Pan-cancer Segmentation</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="https://www.codabench.org/competitions/5263/" target="_blank">Interactive 3D Biomedical<br /> Image Segmentation</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="https://www.codabench.org/competitions/5651/" target="_blank">Text-guided 3D Biomedical<br /> Image Segmentation</a>
-                              </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Previous</a>
-                            <ul class="dropdown-menu" aria-labelledby="previousDropdown">
-                                <li>
-                                  <a class="dropdown-item" href="https://fmv-cvpr25workshop.github.io/" target="_blank">CVPR 2025</a>
-                                </li>
-                                <li>
-                                  <a class="dropdown-item" href="https://fmv-cvpr24workshop.github.io/" target="_blank">CVPR 2024</a>
-                                </li>
-                              </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container">
-                <!-- HEADING TEXT -->
-                <div class="masthead-heading text-uppercase">
-                    CVPR 2026 Workshop on Foundation Models for Medical Vision
-                </div>
-            </div>
-        </header>
-
+      <!-- Navigation-->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+          <!-- NAVBAR LINK AND LOGO -->
+          <a class="navbar-brand" href="#"
+            ><img
+              src="assets/img/logos/cvpr-logo.jpg"
+              alt="CVPR logo"
+              style="background-color: white"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            Menu
+            <i class="fas fa-bars ms-1"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#schedule">Schedule</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#speakers">Speakers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#organizers">Organizers</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Competition
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="competitionDropdown">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://www.codabench.org/competitions/12650/"
+                      target="_blank"
+                      >Foundation Models for 3D CT</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://www.codabench.org/competitions/7149/"
+                      target="_blank"
+                      >Pan-cancer Segmentation</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://www.codabench.org/competitions/5263/"
+                      target="_blank"
+                      >Interactive 3D Biomedical<br />
+                      Image Segmentation</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://www.codabench.org/competitions/5651/"
+                      target="_blank"
+                      >Text-guided 3D Biomedical<br />
+                      Image Segmentation</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Previous</a
+                >
+                <ul class="dropdown-menu" aria-labelledby="previousDropdown">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://fmv-cvpr25workshop.github.io/"
+                      target="_blank"
+                      >CVPR 2025</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://fmv-cvpr24workshop.github.io/"
+                      target="_blank"
+                      >CVPR 2024</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Masthead-->
+      <header class="masthead">
+        <div class="container">
+          <!-- HEADING TEXT -->
+          <div class="masthead-heading text-uppercase">
+            CVPR 2026 Workshop on Foundation Models for Medical Vision
+          </div>
+        </div>
+      </header>
     </div>
-
 
     <!-- About -->
     <section class="page-section bg" id="about">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">About</h2>
-            </div>
-            <div class="row text-left" id="content">
-                <h4>
-                    Overview
-                </h4>
-                <p>
-                    The rapid growth of foundation models in various domains has been transformative, 
-                    bringing unprecedented capabilities and advances in automated understanding. Medical vision, 
-                    a pivotal segment of computer vision, is poised to greatly benefit from these advancements. 
-                    This workshop delves into the integration and application of foundation models specific to the realm of medical imaging. 
-                    We will cover state-of-the-art techniques for diverse medical data, such as echocardiogram, fundus, pathology, and radiology, 
-                    as well as the practical challenges of implementing these models in clinical settings. 
-                    Through expert-led sessions, interactive discussions, and international competitions, 
-                    we aim to offer attendees a comprehensive understanding of the potential impact foundation models 
-                    could have on the future of medical diagnostics and patient care.
-                </p>
-            </div>
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">About</h2>
         </div>
+        <div class="row text-left" id="content">
+          <h4>Overview</h4>
+          <p>
+            The rapid growth of foundation models in various domains has been
+            transformative, bringing unprecedented capabilities and advances in
+            automated understanding. Medical vision, a pivotal segment of
+            computer vision, is poised to greatly benefit from these
+            advancements. This workshop delves into the integration and
+            application of foundation models specific to the realm of medical
+            imaging. We will cover state-of-the-art techniques for diverse
+            medical data, such as echocardiogram, fundus, pathology, and
+            radiology, as well as the practical challenges of implementing these
+            models in clinical settings. Through expert-led sessions,
+            interactive discussions, and international competitions, we aim to
+            offer attendees a comprehensive understanding of the potential
+            impact foundation models could have on the future of medical
+            diagnostics and patient care.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Schedule -->
     <section class="page-section bg-light" id="schedule">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Schedule</h2>
-                <h3 class="section-subheading text-muted">June 3 Central Time (Room 607)</h3>
-                <div class="table-container">
-                    <table class="schedule-table">
-                        <thead>
-                            <tr>
-                                <th class="time-col">Time</th>
-                                <th>Speaker</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="session-row">
-                                <td class="time">8:30 - 9:00</td>
-                                <td>Welcome and Opening Remarks</td>
-                            </tr>
-                            <tr>
-                                <td class="time">9:00 - 9:30</td>
-                                <td><span class="speaker-name">Jakob Nikolas Kather</span><br>
-                                    <span class="talk-title">AI applications in oncology and cancer research</span></td>
-                            </tr>
-                            <tr>
-                                <td class="time">9:30 - 10:00</td>
-                                <td><span class="speaker-name">Faisal Mahmood</span><br>
-                                    <span class="talk-title">Multimodal and Generative AI for Pathology</span></td>
-                            </tr>
-                            <tr class="break-row">
-                                <td class="time">10:00 - 11:00</td>
-                                <td>Coffee Break</td>
-                            </tr>
-                            <tr>
-                                <td class="time">11:00 - 11:30</td>
-                                <td><span class="speaker-name">Hoifung Poon</span><br>
-                                    <span class="talk-title">Toward Virtual Patient: AI for Accelerating Medical Discovery</span></td>
-                            </tr>
-                            <tr>
-                                <td class="time">11:30 - 12:00</td>
-                                <td><span class="speaker-name">Pranav Rajpurkar</span><br>
-                                    <span class="talk-title">Routing to Autonomous AI for Medicine</span></td>
-                            </tr>
-                            <tr class="session-row">
-                                <td class="time">12:00 - 12:30</td>
-                                <td>CT Foundation Model Competition: Winner highlights</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Presentations / Abstracts -->
-            <div class="text-center mt-5">
-                <h2 class="section-heading text-uppercase">Presentations</h2>
-            </div>
-            <div class="row text-left">
-                <div class="mb-4">
-                    <h4>Jakob Nikolas Kather</h4>
-                    <h5><em>AI applications in oncology and cancer research</em></h5>
-                    <p>
-                        Artificial intelligence (AI) is rapidly transforming cancer research and oncology.
-                        This talk will highlight two key areas where AI is making a major impact.
-                        First, it will discuss how AI can extract meaningful, quantitative insights from medical data,
-                        including, but not limited to, histopathology images. AI tools can help predict cancer outcomes,
-                        treatment responses, genetic alterations, and gene expression, using data that is already routinely
-                        collected. These approaches have the potential to reduce the workload for clinicians, improve
-                        consistency in reporting, and reveal patterns that were previously hidden.
-                        Second, it will explore the emerging role of large language models (LLMs) and AI agents.
-                        LLMs can now reason, plan, and act&mdash;allowing them to perform complex, multi-step tasks with
-                        minimal human input. When used as agents, they can interact with external software or databases,
-                        and even help design drugs or recommend treatment strategies. These capabilities go beyond
-                        traditional AI systems and are opening up new possibilities in both research and clinical care.
-                    </p>
-                </div>
-                <div class="mb-4">
-                    <h4>Hoifung Poon</h4>
-                    <h5><em>Toward Virtual Patient: AI for Accelerating Medical Discovery</em></h5>
-                    <p>
-                        Today, medical discovery advances one clinical trial at a time, each taking years to execute and
-                        often costing $100 million or more. As we enter the era of precision health in which we recognize
-                        that &ldquo;one size doesn't fit all&rdquo; and thus try to tailor treatments for each individual,
-                        continuing on today's discovery processes is clearly not sustainable. The confluence of
-                        technological advances and social policies has led to rapid digitization of multimodal,
-                        longitudinal patient journeys, such as electronic health records (EHRs), imaging, and multiomics.
-                        Our overarching research agenda lies in advancing multimodal generative AI to learn the language
-                        of patients and create a virtual patient world model as digital twin for forecasting disease
-                        progression and treatment response. This enables us to synthesize population-scale real-world
-                        evidence from hundreds of millions of patients and accelerate medical discovery through AI-powered
-                        virtual clinical trials, in deep partnerships with real-world stakeholders such as large health
-                        systems and life sciences companies.
-                    </p>
-                </div>
-                <div class="mb-4">
-                    <h4>Pranav Rajpurkar</h4>
-                    <h5><em>Routing to Autonomous AI for Medicine</em></h5>
-                    <p>
-                        Recent evidence challenges a fundamental assumption in medical AI: that combining AI with physician
-                        expertise naturally leads to better outcomes. Studies show that AI assistance often fails to improve
-                        diagnostic accuracy and can even slow down clinical workflows. This talk presents an alternative
-                        vision: instead of forcing integration, we should embrace clear role separation between AI systems
-                        and physicians. Drawing from recent large-scale studies and advances in generalist medical AI
-                        systems, I will examine promising models where AI and doctors work separately but complementarily,
-                        each leveraging their unique strengths. Through practical examples and emerging evidence, I will
-                        demonstrate how this approach could transform clinical practice while maintaining the essential
-                        role of human medical expertise.
-                    </p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Schedule</h2>
+          <h3 class="section-subheading text-muted">
+            June 3 Central Time (Room 607)
+          </h3>
+          <div class="table-container">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th class="time-col">Time</th>
+                  <th>Speaker</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="session-row">
+                  <td class="time">8:30 - 9:00</td>
+                  <td>Welcome and Opening Remarks</td>
+                </tr>
+                <tr>
+                  <td class="time">9:00 - 9:30</td>
+                  <td>
+                    <span class="speaker-name">Jakob Nikolas Kather</span><br />
+                    <span class="talk-title"
+                      >AI applications in oncology and cancer research</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="time">9:30 - 10:00</td>
+                  <td>
+                    <span class="speaker-name">Faisal Mahmood</span><br />
+                    <span class="talk-title"
+                      >Multimodal and Generative AI for Pathology</span
+                    >
+                  </td>
+                </tr>
+                <tr class="break-row">
+                  <td class="time">10:00 - 11:00</td>
+                  <td>Coffee Break</td>
+                </tr>
+                <tr>
+                  <td class="time">11:00 - 11:30</td>
+                  <td>
+                    <span class="speaker-name">Hoifung Poon</span><br />
+                    <span class="talk-title"
+                      >Toward Virtual Patient: AI for Accelerating Medical
+                      Discovery</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="time">11:30 - 12:00</td>
+                  <td>
+                    <span class="speaker-name">Pranav Rajpurkar</span><br />
+                    <span class="talk-title"
+                      >Routing to Autonomous AI for Medicine</span
+                    >
+                  </td>
+                </tr>
+                <tr class="session-row">
+                  <td class="time">12:00 - 12:30</td>
+                  <td>CT Foundation Model Competition: Winner highlights</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+
+        <!-- Presentations / Abstracts -->
+        <div class="text-center mt-5">
+          <h2 class="section-heading text-uppercase">Presentations</h2>
+        </div>
+        <div class="row text-left">
+          <div class="mb-4">
+            <h4>Jakob Nikolas Kather</h4>
+            <h5><em>AI applications in oncology and cancer research</em></h5>
+            <p>
+              Artificial intelligence (AI) is rapidly transforming cancer
+              research and oncology. This talk will highlight two key areas
+              where AI is making a major impact. First, it will discuss how AI
+              can extract meaningful, quantitative insights from medical data,
+              including, but not limited to, histopathology images. AI tools can
+              help predict cancer outcomes, treatment responses, genetic
+              alterations, and gene expression, using data that is already
+              routinely collected. These approaches have the potential to reduce
+              the workload for clinicians, improve consistency in reporting, and
+              reveal patterns that were previously hidden. Second, it will
+              explore the emerging role of large language models (LLMs) and AI
+              agents. LLMs can now reason, plan, and act&mdash;allowing them to
+              perform complex, multi-step tasks with minimal human input. When
+              used as agents, they can interact with external software or
+              databases, and even help design drugs or recommend treatment
+              strategies. These capabilities go beyond traditional AI systems
+              and are opening up new possibilities in both research and clinical
+              care.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h4>Hoifung Poon</h4>
+            <h5>
+              <em
+                >Toward Virtual Patient: AI for Accelerating Medical
+                Discovery</em
+              >
+            </h5>
+            <p>
+              Today, medical discovery advances one clinical trial at a time,
+              each taking years to execute and often costing $100 million or
+              more. As we enter the era of precision health in which we
+              recognize that &ldquo;one size doesn't fit all&rdquo; and thus try
+              to tailor treatments for each individual, continuing on today's
+              discovery processes is clearly not sustainable. The confluence of
+              technological advances and social policies has led to rapid
+              digitization of multimodal, longitudinal patient journeys, such as
+              electronic health records (EHRs), imaging, and multiomics. Our
+              overarching research agenda lies in advancing multimodal
+              generative AI to learn the language of patients and create a
+              virtual patient world model as digital twin for forecasting
+              disease progression and treatment response. This enables us to
+              synthesize population-scale real-world evidence from hundreds of
+              millions of patients and accelerate medical discovery through
+              AI-powered virtual clinical trials, in deep partnerships with
+              real-world stakeholders such as large health systems and life
+              sciences companies.
+            </p>
+          </div>
+          <div class="mb-4">
+            <h4>Pranav Rajpurkar</h4>
+            <h5><em>Routing to Autonomous AI for Medicine</em></h5>
+            <p>
+              Recent evidence challenges a fundamental assumption in medical AI:
+              that combining AI with physician expertise naturally leads to
+              better outcomes. Studies show that AI assistance often fails to
+              improve diagnostic accuracy and can even slow down clinical
+              workflows. This talk presents an alternative vision: instead of
+              forcing integration, we should embrace clear role separation
+              between AI systems and physicians. Drawing from recent large-scale
+              studies and advances in generalist medical AI systems, I will
+              examine promising models where AI and doctors work separately but
+              complementarily, each leveraging their unique strengths. Through
+              practical examples and emerging evidence, I will demonstrate how
+              this approach could transform clinical practice while maintaining
+              the essential role of human medical expertise.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Speakers -->
     <section class="page-section bg" id="speakers">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Speakers</h2>
-                <div class="col-lg-8 mx-auto text-center">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Speakers</h2>
+          <div class="col-lg-8 mx-auto text-center"></div>
 
-                </div>
-
-                <div class="row justify-content-center">
-
-                    <!-- Jakob Nikolas Kather -->
-                    <div class="col-lg-2">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" loading="lazy" src="assets/img/speakers/Jakob-Nikolas-Kather.png" alt="Jakob Nikolas Kather" />
-                            <h4>Jakob Nikolas Kather</h4>
-                            <p class="text-muted">Technical University Dresden</p>
-                            <a class="btn btn-dark btn-social mx-2" href="https://jnkather.github.io/team/"
-                                aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Faisal Mahmood -->
-                    <div class="col-lg-2">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" loading="lazy" src="assets/img/speakers/mahmood_faisal.png"
-                                alt="Faisal Mahmood" />
-                            <h4>Faisal Mahmood</h4>
-                            <p class="text-muted">Harvard Medical School</p>
-                            <a class="btn btn-dark btn-social mx-2"
-                                href="https://faisal.ai/" aria-label="Website"><i
-                                    class="fa-solid fa-globe"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Hoifung Poon -->
-                    <div class="col-lg-2">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" loading="lazy" src="assets/img/speakers/Hoifung_Poon.jpeg"
-                                alt="Hoifung Poon" />
-                            <h4>Hoifung Poon</h4>
-                            <p class="text-muted">Microsoft</p>
-                            <a class="btn btn-dark btn-social mx-2" href="https://www.microsoft.com/en-us/research/people/hoifung/"
-                                aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Pranav Rajpurkar -->
-                    <div class="col-lg-2">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" loading="lazy" src="assets/img/speakers/Pranav_Rajpurkar.jpg"
-                                alt="Pranav Rajpurkar" />
-                            <h4>Pranav Rajpurkar</h4>
-                            <p class="text-muted">Harvard Medical School</p>
-                            <a class="btn btn-dark btn-social mx-2" href="https://scholar.google.com/citations?user=QcOG6sgAAAAJ&hl=en"
-                                aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-                        </div>
-                    </div>
-
-                </div>
+          <div class="row justify-content-center">
+            <!-- Jakob Nikolas Kather -->
+            <div class="col-lg-2">
+              <div class="team-member">
+                <img
+                  class="mx-auto rounded-circle"
+                  loading="lazy"
+                  src="assets/img/speakers/Jakob-Nikolas-Kather.png"
+                  alt="Jakob Nikolas Kather"
+                />
+                <h4>Jakob Nikolas Kather</h4>
+                <p class="text-muted">Technical University Dresden</p>
+                <a
+                  class="btn btn-dark btn-social mx-2"
+                  href="https://jnkather.github.io/team/"
+                  aria-label="Website"
+                  ><i class="fa-solid fa-globe"></i
+                ></a>
+              </div>
             </div>
 
+            <!-- Faisal Mahmood -->
+            <div class="col-lg-2">
+              <div class="team-member">
+                <img
+                  class="mx-auto rounded-circle"
+                  loading="lazy"
+                  src="assets/img/speakers/mahmood_faisal.png"
+                  alt="Faisal Mahmood"
+                />
+                <h4>Faisal Mahmood</h4>
+                <p class="text-muted">Harvard Medical School</p>
+                <a
+                  class="btn btn-dark btn-social mx-2"
+                  href="https://faisal.ai/"
+                  aria-label="Website"
+                  ><i class="fa-solid fa-globe"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Hoifung Poon -->
+            <div class="col-lg-2">
+              <div class="team-member">
+                <img
+                  class="mx-auto rounded-circle"
+                  loading="lazy"
+                  src="assets/img/speakers/Hoifung_Poon.jpeg"
+                  alt="Hoifung Poon"
+                />
+                <h4>Hoifung Poon</h4>
+                <p class="text-muted">Microsoft</p>
+                <a
+                  class="btn btn-dark btn-social mx-2"
+                  href="https://www.microsoft.com/en-us/research/people/hoifung/"
+                  aria-label="Website"
+                  ><i class="fa-solid fa-globe"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Pranav Rajpurkar -->
+            <div class="col-lg-2">
+              <div class="team-member">
+                <img
+                  class="mx-auto rounded-circle"
+                  loading="lazy"
+                  src="assets/img/speakers/Pranav_Rajpurkar.jpg"
+                  alt="Pranav Rajpurkar"
+                />
+                <h4>Pranav Rajpurkar</h4>
+                <p class="text-muted">Harvard Medical School</p>
+                <a
+                  class="btn btn-dark btn-social mx-2"
+                  href="https://scholar.google.com/citations?user=QcOG6sgAAAAJ&hl=en"
+                  aria-label="Website"
+                  ><i class="fa-solid fa-globe"></i
+                ></a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Organizers -->
     <section class="page-section bg-light" id="organizers">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Organizers</h2>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-2">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" loading="lazy" src="assets/img/organizers/JunMa-head.png" alt="Jun Ma" />
-                        <h4>Jun Ma</h4>
-                        <p class="text-muted">University Health Network</p>
-                        <a class="btn btn-dark btn-social mx-2" href="https://scholar.google.com.hk/citations?hl=en&user=bW1UV4IAAAAJ&view_op=list_works&sortby=pubdate"
-                            aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-2">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" loading="lazy" src="assets/img/organizers/Vishal_M._Patel.jpg"
-                            alt="Vishal M. Patel" />
-                        <h4>Vishal M. Patel</h4>
-                        <p class="text-muted">Johns Hopkins University</p>
-                        <a class="btn btn-dark btn-social mx-2"
-                            href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/"
-                            aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-2">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" loading="lazy" src="assets/img/organizers/Yuyin-Zhou.jpeg" alt="Yuyin Zhou" />
-                        <h4>Yuyin Zhou</h4>
-                        <p class="text-muted">University of California, Santa Cruz</p>
-                        <a class="btn btn-dark btn-social mx-2" href="https://yuyinzhou.github.io/" 
-                            aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-2">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" loading="lazy" src="assets/img/organizers/Bo_Wang.png" alt="Bo Wang" />
-                        <h4>Bo Wang</h4>
-                        <p class="text-muted">University of Toronto, University Health Network, Vector Institute</p>
-                        <a class="btn btn-dark btn-social mx-2" href="https://www.wanglab.ai/"
-                            aria-label="Website"><i class="fa-solid fa-globe"></i></a>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Organizers</h2>
         </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-2">
+            <div class="team-member">
+              <img
+                class="mx-auto rounded-circle"
+                loading="lazy"
+                src="assets/img/organizers/JunMa-head.png"
+                alt="Jun Ma"
+              />
+              <h4>Jun Ma</h4>
+              <p class="text-muted">University Health Network</p>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="https://scholar.google.com.hk/citations?hl=en&user=bW1UV4IAAAAJ&view_op=list_works&sortby=pubdate"
+                aria-label="Website"
+                ><i class="fa-solid fa-globe"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2">
+            <div class="team-member">
+              <img
+                class="mx-auto rounded-circle"
+                loading="lazy"
+                src="assets/img/organizers/Vishal_M._Patel.jpg"
+                alt="Vishal M. Patel"
+              />
+              <h4>Vishal M. Patel</h4>
+              <p class="text-muted">Johns Hopkins University</p>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="https://engineering.jhu.edu/vpatel36/team/vishalpatel/"
+                aria-label="Website"
+                ><i class="fa-solid fa-globe"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2">
+            <div class="team-member">
+              <img
+                class="mx-auto rounded-circle"
+                loading="lazy"
+                src="assets/img/organizers/Yuyin-Zhou.jpeg"
+                alt="Yuyin Zhou"
+              />
+              <h4>Yuyin Zhou</h4>
+              <p class="text-muted">University of California, Santa Cruz</p>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="https://yuyinzhou.github.io/"
+                aria-label="Website"
+                ><i class="fa-solid fa-globe"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2">
+            <div class="team-member">
+              <img
+                class="mx-auto rounded-circle"
+                loading="lazy"
+                src="assets/img/organizers/Bo_Wang.png"
+                alt="Bo Wang"
+              />
+              <h4>Bo Wang</h4>
+              <p class="text-muted">
+                University of Toronto, University Health Network, Vector
+                Institute
+              </p>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="https://scholar.google.ca/citations?user=37FDILIAAAAJ&hl=en/"
+                aria-label="Website"
+                ><i class="fa-solid fa-globe"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-
     <section class="page-section bg" id="map">
-        <div class="container d-flex justify-content-center align-items-center">
-            <div class="col-lg-4">
-                <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=Buo4RVjX1yYfcAcNBCRRaaM2qYKbZLVng_EHIPLV0Xo&cl=ffffff&w=a"></script>
-            </div>
+      <div class="container d-flex justify-content-center align-items-center">
+        <div class="col-lg-4">
+          <script
+            type="text/javascript"
+            id="clustrmaps"
+            src="//clustrmaps.com/map_v2.js?d=Buo4RVjX1yYfcAcNBCRRaaM2qYKbZLVng_EHIPLV0Xo&cl=ffffff&w=a"
+          ></script>
         </div>
+      </div>
     </section>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-</body>
-
+  </body>
 </html>
